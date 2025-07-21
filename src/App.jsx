@@ -14,11 +14,19 @@ function App() {
   const addValue= ()=>{
     // console.log("Value Added");
     counter=counter+1;
+    if(counter >20){
+      alert("Counter can not go above 20");
+      return ;
+    }
     setCounter(counter);
   }
 
   const  removeValue= ()=>{
     counter=counter-1;
+    if(counter <0){
+      alert("Counter can not go beyond 0");
+      return ;
+    }
     setCounter(counter);
   }
   return (
@@ -29,6 +37,8 @@ function App() {
       <button onClick={addValue}>Add value</button> 
       <br />
       <button onClick={removeValue}>Remove value</button>
+
+      {/* <p>You can not go beyond {counter}</p> */}
 
     </>
   )
